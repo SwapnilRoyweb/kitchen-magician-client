@@ -13,6 +13,8 @@ module.exports = {
     'react-refresh/only-export-components': 'warn',
     'react/jsx-no-target-blank': 0,
     'no-unused-vars': 0,
+    'react/jsx-key': 0,
+    'react/prop-types': 0,
     'react/jsx-uses-react': 'error',
     'react/jsx-uses-vars': 'error',
   },

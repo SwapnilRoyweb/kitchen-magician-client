@@ -8,7 +8,7 @@ import './Header.css';
 
 const Header = () => {
     return (
-        <div className='mx-5 sticky-top'>
+        <div className='sticky-top'>
             <Navbar className='rounded-bottom' bg="dark" variant='dark' expand="lg">
                 <Container>
                     <Navbar.Brand href="/" className='d-flex gap-2 align-items-center'>
@@ -21,7 +21,7 @@ const Header = () => {
                                 <Nav.Link href="/">Home</Nav.Link>
                                 <Nav.Link href="#link">About</Nav.Link>
                                 <Nav.Link href="#link">Contact</Nav.Link>
-                                <Nav.Link href="#link">Blog</Nav.Link>
+                                <Nav.Link href="/blog">Blog</Nav.Link>
                             </Nav>
                             <div>
                                 <img title='Swapnil' className='profile-pic rounded-circle' src="https://i.ibb.co/DYQ0b5M/2870602-6411.jpg" alt="" />
