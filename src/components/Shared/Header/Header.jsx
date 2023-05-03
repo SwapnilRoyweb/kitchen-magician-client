@@ -5,9 +5,10 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import './Header.css';
 
+
 const Header = () => {
     return (
-        <div className='mx-5'>
+        <div className='mx-5 sticky-top'>
             <Navbar className='rounded-bottom' bg="dark" variant='dark' expand="lg">
                 <Container>
                     <Navbar.Brand href="/" className='d-flex gap-2 align-items-center'>
@@ -22,7 +23,10 @@ const Header = () => {
                                 <Nav.Link href="#link">Contact</Nav.Link>
                                 <Nav.Link href="#link">Blog</Nav.Link>
                             </Nav>
-                            <button className='btn btn-danger'>Login</button>
+                            <div>
+                                <img title='Swapnil' className='profile-pic rounded-circle' src="https://i.ibb.co/DYQ0b5M/2870602-6411.jpg" alt="" />
+                                <button className='btn btn-danger ms-2'>Login</button>
+                            </div>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
