@@ -25,7 +25,7 @@ const ChefDetails = () => {
                     <p>{description}</p>
                 </div>
             </div>
-            <div className='mt-5'>
+            <div className='mt-5 d-flex flex-column align-items-center'>
                 <h1 className='text-center text-decoration-underline mb-5'>Recipes of {chefName}</h1>
                 <Row sm={1} md={3} className="g-4">
                     {
