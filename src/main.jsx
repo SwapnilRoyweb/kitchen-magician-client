@@ -10,6 +10,7 @@ import Home from './components/Home/Home.jsx';
 import Main from './components/Layout/Main.jsx';
 import Blog from './components/Blog/Blog';
 import ChefDetails from './components/Chefs/ChefDetails/ChefDetails';
+import Error from './components/ErrorPage/Error';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: 'blog',
         element: <Blog></Blog>
+      },
+      {
+        path: '*',
+        element: <Error></Error>
       }
     ]
   }
