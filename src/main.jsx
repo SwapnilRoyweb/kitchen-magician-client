@@ -9,6 +9,7 @@ import {
 import Home from './components/Home/Home.jsx';
 import Main from './components/Layout/Main.jsx';
 import Blog from './components/Blog/Blog';
+import ChefDetails from './components/Chefs/ChefDetails/ChefDetails';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,11 @@ const router = createBrowserRouter([
         path: '/',
         element: <Home></Home>,
         loader: () => fetch('http://localhost:4000/chef')
+      },
+      {
+        path: '/chef/:id',
+        element: <ChefDetails></ChefDetails>,
+        loader: ({params}) => fetch(`http://localhost:4000/chef/${params.id}`)
       },
       {
         path: 'blog',
