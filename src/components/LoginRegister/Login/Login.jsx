@@ -9,7 +9,7 @@ import { FaGooglePlusSquare, FaGithubSquare } from 'react-icons/fa';
 const Login = () => {
     const [error, setError] = useState('');
 
-    const { signIn, signInWithGoogle } = useContext(AuthContext);
+    const { signIn, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -49,6 +49,18 @@ const Login = () => {
         })
     }
 
+    const handleGithubSignIn = () => {
+        signInWithGithub()
+        .then(result => {
+            const user = result.user;
+            navigate(from, {replace: true});
+        })
+        .catch(error => {
+            console.log(error);
+            setError(error.message);
+        })
+    }
+
     return (
         <div className='my-5 d-flex flex-column justify-content-center align-items-center'>
             <h2>Please Sign In !!!</h2>
@@ -63,7 +75,7 @@ const Login = () => {
                 </Form.Group>
                 <div className='d-flex gap-2 flex-column mb-2'>
                     <button className='btn btn-success' onClick={handleGoogleSignIn}><FaGooglePlusSquare></FaGooglePlusSquare> Log in with Google</button>
-                    <button className='btn btn-warning'><FaGithubSquare></FaGithubSquare> Log in with Github</button>
+                    <button className='btn btn-warning' onClick={handleGithubSignIn}><FaGithubSquare></FaGithubSquare> Log in with Github</button>
                 </div>
                 <p>Don't have an Account? <Link to='/register' className='text-decoration-none'>Sign Up</Link></p>
                 <p className='text-danger'>{error}</p>
