@@ -20,7 +20,7 @@ const ChefDetails = () => {
                         <img src={chefPic} alt="" className='img-fluid'/>
                     </LazyLoad>
                 </div>
-                <div className='ms-5 bg-danger bg-opacity-50 p-3 rounded border border-5 border-danger border-top-0 border-bottom-0'>
+                <div className='ms-5 bg-danger bg-opacity-75 p-3 rounded border border-5 border-dark border-top-0 border-bottom-0'>
                     <h2>{chefName}</h2>
                     <p>{yearsOfExperience}</p>
                     <p>Recipes: {numberOfRecipes}</p>

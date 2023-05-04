@@ -4,7 +4,7 @@ import './Footer.css';
 
 const Footer = () => {
     return (
-        <div className='fixed-bottom mx-5'>
+        <div className='sticky-bottom'>
             {/* <div className='d-flex justify-content-center'>
                 <img className='footer-image' src="https://i.ibb.co/DYQ0b5M/2870602-6411.jpg" alt="" />
             </div> */}

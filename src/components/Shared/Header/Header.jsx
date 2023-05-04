@@ -30,8 +30,8 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className='d-flex flex-grow-1 justify-content-center'>
-                            <Nav.Link href="/">Home</Nav.Link>
-                            <Nav.Link href="/blog">Blog</Nav.Link>
+                            <Nav.Link href="/" className={({isActive}) => isActive ? 'text-danger' : ''}>Home</Nav.Link>
+                            <Nav.Link href="/blog" className={({isActive}) => isActive ? 'text-danger' : ''}>Blog</Nav.Link>
                             <Nav.Link href="/about">About</Nav.Link>
                         </Nav>
                         <div className='d-flex align-items-center gap-2'>
