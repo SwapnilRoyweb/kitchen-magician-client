@@ -8,7 +8,6 @@ this project is a cuisine of bangladeshi chef website and it is for Programming 
 ## Demo
 
 Client Site Live Link: https://kitchen-magician-assignment-10.web.app
-Server Site Live Link: https://module-65-assignment-10-server-swapnilroyweb.vercel.app/chef
 
 
 ## Documentation
