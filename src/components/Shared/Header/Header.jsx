@@ -1,12 +1,24 @@
 import React from 'react';
+import { useContext } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Providers/AuthProvider';
 import './Header.css';
 
 
 const Header = () => {
+
+    const {user, logout} = useContext(AuthContext);
+
+    const handleLogout = () => {
+        logout()
+        .then()
+        .catch(error => console.log(error))
+    }
+
     return (
         <div className='sticky-top'>
             <Navbar className='rounded-bottom' bg="dark" variant='dark' expand="lg">
@@ -23,9 +35,9 @@ const Header = () => {
                                 <Nav.Link href="#link">Contact</Nav.Link>
                                 <Nav.Link href="/blog">Blog</Nav.Link>
                             </Nav>
-                            <div>
-                                <img title='Swapnil' className='profile-pic rounded-circle' src="https://i.ibb.co/DYQ0b5M/2870602-6411.jpg" alt="" />
-                                <button className='btn btn-danger ms-2'>Login</button>
+                            <div className='d-flex align-items-center gap-2'>
+                                {user && <img title={user.displayName} className='profile-pic rounded-circle' src={user.photoURL} alt="" />}
+                                 {user ? <button className='btn btn-danger' onClick={handleLogout}>Logout</button> : <button className='btn btn-danger ms-2'><Link to='/login' className='text-decoration-none text-white'>Sign In</Link></button>}
                             </div>
                     </Navbar.Collapse>
                 </Container>
