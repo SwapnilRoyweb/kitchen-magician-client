@@ -11,12 +11,12 @@ import './Header.css';
 
 const Header = () => {
 
-    const {user, logout} = useContext(AuthContext);
+    const { user, logout } = useContext(AuthContext);
 
     const handleLogout = () => {
         logout()
-        .then()
-        .catch(error => console.log(error))
+            .then()
+            .catch(error => console.log(error))
     }
 
     return (
@@ -29,16 +29,15 @@ const Header = () => {
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                            <Nav className='d-flex flex-grow-1 justify-content-center'>
-                                <Nav.Link href="/">Home</Nav.Link>
-                                <Nav.Link href="#link">About</Nav.Link>
-                                <Nav.Link href="#link">Contact</Nav.Link>
-                                <Nav.Link href="/blog">Blog</Nav.Link>
-                            </Nav>
-                            <div className='d-flex align-items-center gap-2'>
-                                {user && <img title={user.displayName} className='profile-pic rounded-circle' src={user.photoURL} alt="" />}
-                                 {user ? <button className='btn btn-danger' onClick={handleLogout}>Logout</button> : <button className='btn btn-danger ms-2'><Link to='/login' className='text-decoration-none text-white'>Sign In</Link></button>}
-                            </div>
+                        <Nav className='d-flex flex-grow-1 justify-content-center'>
+                            <Nav.Link href="/">Home</Nav.Link>
+                            <Nav.Link href="/blog">Blog</Nav.Link>
+                            <Nav.Link href="/about">About</Nav.Link>
+                        </Nav>
+                        <div className='d-flex align-items-center gap-2'>
+                            {user && <img title={user.displayName} className='profile-pic rounded-circle' src={user.photoURL} alt="" />}
+                            {user ? <button className='btn btn-danger' onClick={handleLogout}>Logout</button> : <button className='btn btn-danger ms-2'><Link to='/login' className='text-decoration-none text-white'>Sign In</Link></button>}
+                        </div>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>

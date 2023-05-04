@@ -4,6 +4,7 @@ import { FaHandPointLeft } from 'react-icons/fa';
 import Recipes from '../Recipes/Recipes';
 import Row from 'react-bootstrap/Row';
 import './ChefDetails.css';
+import LazyLoad from 'react-lazy-load';
 
 const ChefDetails = () => {
 
@@ -15,7 +16,9 @@ const ChefDetails = () => {
         <div className='my-3'>
             <div className='d-flex align-items-center bg-warning bg-opacity-25 p-3 rounded bg-img'>
                 <div className='h-100 w-100 bg-warning bg-opacity-25 rounded border border-4 border-dark '>
-                    <img src={chefPic} alt="" className='img-fluid' />
+                    <LazyLoad>
+                        <img src={chefPic} alt="" className='img-fluid'/>
+                    </LazyLoad>
                 </div>
                 <div className='ms-5 bg-danger bg-opacity-50 p-3 rounded border border-5 border-danger border-top-0 border-bottom-0'>
                     <h2>{chefName}</h2>
