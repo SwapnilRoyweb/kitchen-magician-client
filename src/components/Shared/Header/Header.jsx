@@ -13,7 +13,7 @@ const Header = () => {
                 <Container>
                     <Navbar.Brand href="/" className='d-flex gap-2 align-items-center'>
                         <img src="https://i.ibb.co/Z6qfHN3/799974-18914-NRXLZW.jpg" alt="" className='navbar-logo rounded-circle' />
-                        <h4>Kitchen_<span className='text-danger'>_Magician</span></h4>
+                        <h6>Kitchen_<span className='text-danger'>_Magician</span></h6>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
