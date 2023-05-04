@@ -41,7 +41,7 @@ const Register = () => {
     }
 
     return (
-        <div className='my-2 d-flex flex-column justify-content-center align-items-center'>
+        <div className='my-5 d-flex flex-column justify-content-center align-items-center'>
             <h2>Please Register !!!</h2>
             <Form className='w-50 bg-dark p-4 text-white rounded mt-2' onSubmit={handleRegister}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
