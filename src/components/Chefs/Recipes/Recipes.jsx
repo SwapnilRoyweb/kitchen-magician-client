@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import ReactStarsRating from 'react-awesome-stars-rating';
 import { FaSmileWink } from 'react-icons/fa';
-import { ToastContainer, toast } from 'react-toastify';
+import Alert from 'react-bootstrap/Alert';
 
 const Recipes = ({ recipe }) => {
     const [favorite, setFavorite] = useState(null);
@@ -12,26 +12,15 @@ const Recipes = ({ recipe }) => {
 
     const handleFavorite = () => {
         setFavorite(recipeName);
-        if (favorite !== null) {
-            return toast('added to favorite', {
-                position: "top-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "dark",
-            })
+        if (!favorite) {
+            return <Alert  variant="success">
+            Add to favorite successfully!
+          </Alert>
         }
     }
 
     return (
         <Col>
-            <ToastContainer position="top-right"
-                    autoClose={5000}
-                    closeOnClick
-                    theme="light" />
             <Card border="warning" style={{ width: '18rem', height: '28rem' }}>
                 <Card.Body>
                     <Card.Title>{recipeName}</Card.Title>

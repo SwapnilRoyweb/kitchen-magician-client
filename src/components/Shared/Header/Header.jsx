@@ -6,6 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Providers/AuthProvider';
+import ActiveLink from '../ActiveLink/ActiveLink';
 import './Header.css';
 
 
@@ -29,10 +30,10 @@ const Header = () => {
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className='d-flex flex-grow-1 justify-content-center'>
-                            <Nav.Link href="/" className={({isActive}) => isActive ? 'text-danger' : ''}>Home</Nav.Link>
-                            <Nav.Link href="/blog" className={({isActive}) => isActive ? 'text-danger' : ''}>Blog</Nav.Link>
-                            <Nav.Link href="/about">About</Nav.Link>
+                        <Nav className='d-flex flex-grow-1 justify-content-center gap-3'>
+                            <ActiveLink to='/'>Home</ActiveLink>
+                            <ActiveLink to='/blog'>Blog</ActiveLink>
+                            <ActiveLink to='/About'>About</ActiveLink>
                         </Nav>
                         <div className='d-flex align-items-center gap-2'>
                             {user && <img title={user.displayName} className='profile-pic rounded-circle' src={user.photoURL} alt="" />}
