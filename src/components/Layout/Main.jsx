@@ -5,8 +5,6 @@ import Header from '../Shared/Header/Header';
 import Loader from '../Shared/Loader/Loader';
 
 const Main = () => {
-    const navigation = useNavigation();
-
     return (
         <div className='mx-5'>
             <Header></Header>

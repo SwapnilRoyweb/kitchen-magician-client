@@ -3,13 +3,16 @@ import { useState } from 'react';
 import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Providers/AuthProvider';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Register = () => {
     const [error, setError] = useState('');
 
     const {createUser, updateInformation} = useContext(AuthContext);
+
+    const navigate = useNavigate();
 
     const handleRegister = event => {
         event.preventDefault();
@@ -24,7 +27,9 @@ const Register = () => {
         createUser(email, password)
         .then(result => {
             const createdUser = result.user;
-            console.log(createdUser);
+            toast.success('User created successfully');
+            navigate('/');
+            // console.log(createdUser);
             form.reset();
         })
         .catch(error => {
@@ -32,16 +37,17 @@ const Register = () => {
             setError(error.message);
         })
 
-        updateInformation({displayName: name, photoUrl: photoURL})
-        .then(() => console.log(name, photoURL))
-        .catch(error => {
-            console.log(error);
-            setError(error.message);
-        })
+        // updateInformation({displayName: name, photoUrl: photoURL})
+        // .then(() => console.log(name, photoURL))
+        // .catch(error => {
+        //     console.log(error);
+        //     setError(error.message);
+        // })
     }
 
     return (
         <div className='my-5 d-flex flex-column justify-content-center align-items-center'>
+            <Toaster></Toaster>
             <h2>Please Register !!!</h2>
             <Form className='w-50 bg-dark p-4 text-white rounded mt-2' onSubmit={handleRegister}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">

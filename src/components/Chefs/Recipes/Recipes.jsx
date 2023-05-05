@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import ReactStarsRating from 'react-awesome-stars-rating';
 import { FaSmileWink } from 'react-icons/fa';
-import Alert from 'react-bootstrap/Alert';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Recipes = ({ recipe }) => {
     const [favorite, setFavorite] = useState(null);
@@ -12,11 +12,7 @@ const Recipes = ({ recipe }) => {
 
     const handleFavorite = () => {
         setFavorite(recipeName);
-        if (!favorite) {
-            return <Alert  variant="success">
-            Add to favorite successfully!
-          </Alert>
-        }
+        toast.success('recipe is your favorite');
     }
 
     return (
@@ -36,6 +32,7 @@ const Recipes = ({ recipe }) => {
                     </ul>
                 </Card.Body>
                 <Card.Footer className='d-flex justify-content-center'><button className={favorite ? 'disable' : 'btn btn-warning'} onClick={handleFavorite}><FaSmileWink></FaSmileWink> Favorite</button>
+                <Toaster/>
                 </Card.Footer>
             </Card>
         </Col>

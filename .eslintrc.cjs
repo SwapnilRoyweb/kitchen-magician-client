@@ -16,6 +16,7 @@ module.exports = {
     'react/jsx-key': 0,
     'react/prop-types': 0,
     'react-hooks/rules-of-hooks': 0,
+    'react/no-unescaped-entities': 0,
     'react/jsx-uses-react': 'error',
     'react/jsx-uses-vars': 'error',
   },

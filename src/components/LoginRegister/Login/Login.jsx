@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Providers/AuthProvider';
 import { FaGooglePlusSquare, FaGithubSquare } from 'react-icons/fa';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Login = () => {
     const [error, setError] = useState('');
@@ -27,6 +28,7 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 // console.log(from);
+                toast.success('User login successfully');
                 navigate(from, { replace: true });
                 form.reset();
             })
@@ -41,6 +43,7 @@ const Login = () => {
         .then(result => {
             const user = result.user;
             // console.log(user);
+            toast.success('User login successfully');
             navigate(from, { replace: true });
         })
         .catch(error => {
@@ -53,6 +56,7 @@ const Login = () => {
         signInWithGithub()
         .then(result => {
             const user = result.user;
+            toast.success('User login successfully');
             navigate(from, {replace: true});
         })
         .catch(error => {
@@ -63,6 +67,7 @@ const Login = () => {
 
     return (
         <div className='my-5 d-flex flex-column justify-content-center align-items-center'>
+            <Toaster/>
             <h2>Please Sign In !!!</h2>
             <Form className='w-50 bg-dark p-4 text-white rounded mt-2' onSubmit={handleLogin}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
