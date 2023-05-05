@@ -32,7 +32,7 @@ const Register = () => {
 
             toast.success('User created successfully');
             navigate('/');
-            // console.log(createdUser);
+            console.log(createdUser);
             form.reset();
         })
         .catch(error => {
