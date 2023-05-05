@@ -27,6 +27,9 @@ const Register = () => {
         createUser(email, password)
         .then(result => {
             const createdUser = result.user;
+
+            updateInformation(name, photoURL);
+
             toast.success('User created successfully');
             navigate('/');
             // console.log(createdUser);
@@ -35,14 +38,7 @@ const Register = () => {
         .catch(error => {
             console.log(error);
             setError(error.message);
-        })
-
-        // updateInformation({displayName: name, photoUrl: photoURL})
-        // .then(() => console.log(name, photoURL))
-        // .catch(error => {
-        //     console.log(error);
-        //     setError(error.message);
-        // })
+        })    
     }
 
     return (

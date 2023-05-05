@@ -13,7 +13,7 @@ const Chefs = ({ chef }) => {
 
     return (
         <Col>
-            <Card>
+            <Card style={{width: '23rem'}}>
                 <div className='bg-danger bg-opacity-75 rounded'>
                     <Card.Img variant="top" src={chefPic} className='img-fluid w-75 chef-image' />
                 </div>

@@ -5,7 +5,7 @@ import Chefs from '../Chefs/Chefs/Chefs';
 import Row from 'react-bootstrap/Row';
 import ExtraSection from '../ExtraSection/ExtraSection';
 import AnotherSection from '../ExtraSection/AnotherSection';
-import Spinner from 'react-bootstrap/Spinner';
+
 
 const Home = () => {
 
@@ -14,8 +14,8 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <div className='my-5'>
-                <Row sm={1} md={1} lg={3} className="g-3">
+            <div className='my-5 container'>
+                <Row sm={1} md={2} lg={3} className="g-3">
                     {
                         chefs.map(chef => <Chefs key={chef.id} chef={chef}></Chefs>)
                     }

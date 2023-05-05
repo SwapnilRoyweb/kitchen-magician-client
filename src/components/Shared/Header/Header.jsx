@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Providers/AuthProvider';
 import ActiveLink from '../ActiveLink/ActiveLink';
 import './Header.css';
+import toast, { Toaster } from 'react-hot-toast';
 
 
 const Header = () => {
@@ -16,7 +17,7 @@ const Header = () => {
 
     const handleLogout = () => {
         logout()
-            .then()
+            .then(toast.success('User logout successfully'))
             .catch(error => console.log(error))
     }
 
@@ -42,6 +43,7 @@ const Header = () => {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
+            <Toaster/>
         </div>
     );
 };

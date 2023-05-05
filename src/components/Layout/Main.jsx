@@ -6,7 +6,7 @@ import Loader from '../Shared/Loader/Loader';
 
 const Main = () => {
     return (
-        <div className='mx-5'>
+        <div className='container'>
             <Header></Header>
             <Loader></Loader>
             <Outlet></Outlet>
