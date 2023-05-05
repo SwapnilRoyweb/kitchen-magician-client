@@ -6,11 +6,12 @@ import Form from 'react-bootstrap/Form';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Providers/AuthProvider';
 import toast, { Toaster } from 'react-hot-toast';
+import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
     const [error, setError] = useState('');
 
-    const {createUser, updateInformation} = useContext(AuthContext);
+    const {createUser} = useContext(AuthContext);
 
     const navigate = useNavigate();
 
@@ -31,6 +32,7 @@ const Register = () => {
             updateInformation(name, photoURL);
 
             toast.success('User created successfully');
+            updateInformation(createdUser, name, photoURL);
             navigate('/');
             console.log(createdUser);
             form.reset();
@@ -40,6 +42,13 @@ const Register = () => {
             setError(error.message);
         })    
     }
+    const updateInformation = (user, name, photoURL) => {
+        updateProfile(user, {
+           displayName: name, photoURL: photoURL
+       })
+       .then()
+       .catch(error => console.log(error))
+   }
 
     return (
         <div className='my-5 d-flex flex-column justify-content-center align-items-center'>

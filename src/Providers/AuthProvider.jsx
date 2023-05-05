@@ -19,14 +19,6 @@ const AuthProvider = ({children}) => {
         return createUserWithEmailAndPassword(auth, email, password);
     }
 
-    const updateInformation = (name, photoURL) => {
-        updateProfile(auth.currentUser, {
-           displayName: name, photoURL: photoURL
-       })
-       .then()
-       .catch(error => console.log(error))
-   }
-
     const signIn = (email, password) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
@@ -66,7 +58,7 @@ const AuthProvider = ({children}) => {
         signInWithGoogle,
         signInWithGithub,
         loading,
-        updateInformation
+        
     }
 
     return (
