@@ -8,11 +8,6 @@ import AnotherSection from '../ExtraSection/AnotherSection';
 import Spinner from 'react-bootstrap/Spinner';
 
 const Home = () => {
-    const [loading, setLoading] = useState(false);
-
-    if(loading){
-        return <Spinner animation="grow" variant="dark" />
-    }
 
     const chefs = useLoaderData();
 

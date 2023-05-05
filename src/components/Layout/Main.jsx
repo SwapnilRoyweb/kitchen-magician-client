@@ -1,12 +1,16 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigation } from 'react-router-dom';
 import Footer from '../Shared/Footer/Footer';
 import Header from '../Shared/Header/Header';
+import Loader from '../Shared/Loader/Loader';
 
 const Main = () => {
+    const navigation = useNavigation();
+
     return (
         <div className='mx-5'>
             <Header></Header>
+            <Loader></Loader>
             <Outlet></Outlet>
             <Footer></Footer>
         </div>
